@@ -1,0 +1,26 @@
+---
+title: "Analisis Korespondensi"
+author: "Arditya Criszardin"
+date: "2023-05-01"
+output: html_document
+---
+
+```{r}
+# Memasang paket "MASS" jika belum terpasang
+# install.packages("MASS")
+
+# Memuat data
+my_data <- read.csv("my_data.csv")
+
+# Melakukan Analisis Korespondensi dengan menggunakan paket "MASS"
+library(MASS)
+my_ca <- corresp(my_data[, -1], nf = 2)
+
+# Menampilkan hasil Analisis Korespondensi
+my_ca
+
+# Plot hasil Analisis Korespondensi
+biplot(my_ca)
+
+```
+
